@@ -85,6 +85,7 @@ public class IngressCodeList extends ListActivity {
 		// mId allows you to update the notification later on.
 		mNotificationManager.notify(1, mBuilder.build());
 		
+		
 	}
 
 	@Override
