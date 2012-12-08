@@ -4,5 +4,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry exported="true" kind="lib" path="/home/vishnu/Downloads/urbanairship/urbanairship-lib-2.0.2.jar"/>
+	<classpathentry exported="true" kind="lib" path="/opt/android-sdk/extras/google/gcm/gcm-client/dist/gcm.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

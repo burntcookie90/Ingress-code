@@ -1,4 +1,4 @@
-package com.burntcookie.ingress;
+package com.dinosaurwithakatana.ingress;
 public abstract class FeedParserFactory {
 	static String feedUrl = "http://www.reddit.com/r/ingress/new/.rss?sort=new";
 	

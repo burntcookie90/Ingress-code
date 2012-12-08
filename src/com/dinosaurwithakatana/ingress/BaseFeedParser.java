@@ -1,4 +1,4 @@
-package com.burntcookie.ingress;
+package com.dinosaurwithakatana.ingress;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;

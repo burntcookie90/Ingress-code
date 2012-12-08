@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.burntcookie.ingress"
+      package="com.dinosaurwithakatana.ingress"
       android:versionCode="1"
       android:versionName="1.0">
+      
     <application android:icon="@drawable/icon" android:label="@string/app_name">
         <activity android:name=".IngressCodeList"
                   android:label="@string/app_name">
@@ -11,7 +12,53 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+<!-- REQUIRED for Urban Airship GCM-->
+        <receiver android:name="com.urbanairship.CoreReceiver" />
+        <receiver android:name="com.urbanairship.push.GCMPushReceiver"
+                  android:permission="com.google.android.c2dm.permission.SEND">        
+          <intent-filter>
+              <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+              <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+               
+              <!-- MODIFICATION REQUIRED - Use your package name as the category -->
+              <category android:name="com.dinosaurwithakatana.ingress" />
+          </intent-filter>
+        </receiver>
+ 
+        <service android:name="com.urbanairship.push.PushService"
+                 android:label="Push Notification Service"/>
+        <service android:name="com.urbanairship.push.PushWorkerService"
+                 android:label="Push Notification Worker Service"/>
+        <service android:name="com.urbanairship.analytics.EventService"
+                 android:label="Event Service"/>	
+                 
+        <provider android:name="com.urbanairship.UrbanAirshipProvider"
+            android:authorities="com.dinosaurwithakatana.ingress.urbanairship.provider"
+            android:exported="false"
+            android:multiprocess="true" />
     </application>
-    <uses-sdk android:minSdkVersion="2" />
+    
+    <uses-sdk android:minSdkVersion="8" />
+    
+    
     <uses-permission android:name="android.permission.INTERNET" /> 
+    
+    <permission android:name="com.dinosaurwithakatana.ingress.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+	<uses-permission android:name="com.dinosaurwithakatana.ingress.permission.C2D_MESSAGE" />
+	
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	
+    <uses-permission android:name="android.permission.VIBRATE"/>
+	
+	<!-- App receives GCM messages. -->
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+	
+	<!-- GCM requires a Google account. -->
+	<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+	
+	<!-- Keeps the processor from sleeping when a message is received. -->
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	
+
 </manifest> 
