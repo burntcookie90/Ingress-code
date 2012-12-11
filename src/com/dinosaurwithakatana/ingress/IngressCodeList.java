@@ -44,7 +44,7 @@ public class IngressCodeList extends ListActivity {
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        UAirship.takeOff(this.getApplication());
+//        UAirship.takeOff(this.getApplication());
         
         pushCount = 1;
 
@@ -52,7 +52,7 @@ public class IngressCodeList extends ListActivity {
 		Logger.info("My Application onCreate - App APID: " + apid);
         setContentView(R.layout.main);
         loadFeed(ParserType.ANDROID_SAX);
-        showNotification();
+//        showNotification();
     }
     
 	private void showNotification() {
