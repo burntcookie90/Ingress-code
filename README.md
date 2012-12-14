@@ -2,6 +2,8 @@ Simple notifier for ingress codes
 
 uses urban airship for push notifications
 
+MUST ENABLE PUSH FROM THE MENU
+
 
     <uses-permission android:name="android.permission.INTERNET" />  For receiving messages
 	<uses-permission android:name="com.dinosaurwithakatana.ingress.permission.C2D_MESSAGE" /> GCM
